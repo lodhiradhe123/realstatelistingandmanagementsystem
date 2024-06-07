@@ -4,4 +4,4 @@ exports.isLoggedIn = (req, res, next) => {
     } else {
         res.send("Log in to access the resource.");
     }
-};
+};  

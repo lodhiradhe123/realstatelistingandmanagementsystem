@@ -12,6 +12,10 @@ function verifyrole(req, res, next) {
     }
 }
 
+router.get("/",isLoggedIn,verifyrole,function(req,res,next){
+    res.render("create-property")
+})
+
 router.post(
     "/",
     isLoggedIn,
@@ -25,11 +29,16 @@ router.post(
                 owner: req.user._id,
             });
             await newproperty.save();
-            res.send("Property Created!");
+            res.redirect("/property/propertidata");
         } catch (error) {
             res.send(error.message);
         }
     }
 );
+router.get("/propertidata",isLoggedIn,async function(req,res,next){
+    const propertydata=await PropertySchema.find({owner:req.user._id});
+    res.render("property",{property:propertydata})
+
+})
 
 module.exports = router;

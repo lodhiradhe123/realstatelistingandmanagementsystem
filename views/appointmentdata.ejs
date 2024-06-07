@@ -1,0 +1,16 @@
+<%-include("./partials/header") %>
+<%-include("./partials/nav") %>
+
+<div class="w-full  bg-pink-300 text-center p-10 items-center flex gap-10 flex-wrap">
+  <% appointdata.forEach((ele)=>{%>
+    <div class="owner w-1/4 h-96 bg-zinc-300 rounded-lg p-5">
+       
+        <h1 class="text-3xl uppercase font-bold text-start"><%=ele.date%></h1>
+        <h1 class="text-2xl uppercase font-bold text-start"><%=ele.user%></h1>
+        <h1 class="text-3xl uppercase font-bold text-start text-yellow-200">Rs-<%=ele.status%></h1>
+        <h1 class="text-3xl uppercase font-bold text-start inline wrap">owner</h1>
+    </div>
+   <%})%>
+
+</div>
+<%-include("./partials/footer") %>

@@ -1,0 +1,19 @@
+<%-include("./partials/header") %>
+
+<div class="form w-full h-screen bg-pink-300 p-1">
+<%-include("./partials/nav") %>
+
+  <h1 class="text-3xl text-blue-500 text-center capitalize font-bold">form</h1>
+
+  <div class="formdiv w-1/2 bg-green-100  p-10 rounded-lg ml-80">
+    <form action="/appointment" method="post">
+      <input type="text" name="status" id="" placeholder="status-(scheduled, completed, canceled)" class="w-full text-3xl rounded-lg p-2 border-2 border-black mb-5">
+      <input type="text" name="date" id="" placeholder="enter date of appointment" class="w-full text-3xl rounded-lg p-2 border-2 border-black mb-5">
+      <input type="submit" name="" id="" class="w-1/4 text-3xl rounded-lg p-2 border-2 border-black mb-5 ml-60">
+    </form>
+  </div>
+
+</div>
+
+
+<%-include("./partials/footer") %>
